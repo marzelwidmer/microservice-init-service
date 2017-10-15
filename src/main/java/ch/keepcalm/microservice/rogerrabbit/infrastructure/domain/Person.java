@@ -22,7 +22,7 @@ public class Person {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    private String personId;
+    private String id;
 
     private String firstName;
     private String lastName;

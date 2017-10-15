@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +31,7 @@ public class PersonController {
 
         List<Person> people = personService.getPersons();
         people.stream().forEach(person -> {
-                    PersonResource personResource = personResourceAssembler.toResource(person, person.getPersonId());
+                    PersonResource personResource = personResourceAssembler.toResource(person, person.getId());
                     personResources.add(personResource);
                 }
         );
@@ -42,10 +39,29 @@ public class PersonController {
     }
 
 
-    @GetMapping(value = "persons/{productid}")
-    public ResponseEntity<Resources<PersonResource>> getperson(@PathVariable String productid) {
-        Person person = personService.getPerson(productid);
-        PersonResource productResource = personResourceAssembler.toResource(person, productid);
+    @GetMapping(value = "persons/{id}")
+    public ResponseEntity<Resources<PersonResource>> getPerson(@PathVariable String id) {
+        Person person = personService.getPerson(id);
+        PersonResource productResource = personResourceAssembler.toResource(person, id);
         return new ResponseEntity(productResource, HttpStatus.OK);
     }
+
+
+    @PutMapping(value = "persons/{id}")
+    public ResponseEntity<Resources<PersonResource>> updatePerson(@RequestBody PersonResource personResource, @PathVariable String id) {
+        Person person = personService.getPerson(id);
+        person.setFirstName(personResource.getFirstName());
+        person.setLastName(personResource.getLastName());
+        Person updatedPerson = personService.update(person);
+
+        return new ResponseEntity(personResourceAssembler.toResource(updatedPerson, person.getId()), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "persons")
+    public ResponseEntity<Resources<PersonResource>> createPerson(@RequestBody PersonResource personResource) {
+        Person person = personService.save(personResourceAssembler.instantiateEntity(personResource));
+
+        return new ResponseEntity(personResourceAssembler.toResource(person, person.getId()), HttpStatus.OK);
+    }
+
 }

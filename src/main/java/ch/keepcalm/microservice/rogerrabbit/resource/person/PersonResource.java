@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 @ControllerAdvice
 public class PersonResource extends ResourceSupport  {
 
-    private String personId;
     private String firstName;
     private String lastName;
 

@@ -21,8 +21,17 @@ public class PersonService {
         return (List<Person>) users;
     }
 
-    public Person getPerson(String userid){
-        Person person = personRepository.findByPersonId(userid);
+    public Person getPerson(String id){
+        Person person = personRepository.findById(id);
         return person;
+    }
+
+    public Person update(Person person) {
+        Person updatedPerson = personRepository.save(person);
+        return updatedPerson;
+    }
+
+    public Person save(Person person) {
+        return personRepository.save(person);
     }
 }

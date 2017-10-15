@@ -32,6 +32,9 @@ public class RogerRabbitService implements CommandLineRunner {
         List<Person> persons = new ArrayList<>();
         persons.add(Person.builder().firstName("Jone").lastName("Doe").build());
         persons.add(Person.builder().firstName("Jane").lastName("Doe").build());
+        persons.add(Person.builder().firstName("Jessica").lastName("Rabbit").build());
+        persons.add(Person.builder().firstName("Roger").lastName("Rabbit").build());
+
         return persons;
     }
 

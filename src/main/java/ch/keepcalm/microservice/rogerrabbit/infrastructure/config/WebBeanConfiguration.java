@@ -17,7 +17,6 @@ import java.util.Collections;
 @EnableEntityLinks
 public class WebBeanConfiguration extends WebMvcConfigurerAdapter {
 
-
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
@@ -29,5 +28,4 @@ public class WebBeanConfiguration extends WebMvcConfigurerAdapter {
         beanMapper.setMappingFiles(Collections.singletonList("dozerJdk8Converters.xml"));
         return beanMapper;
     }
-
 }

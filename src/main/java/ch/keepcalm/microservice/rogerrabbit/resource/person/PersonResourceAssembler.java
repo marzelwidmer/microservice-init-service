@@ -21,10 +21,10 @@ public class PersonResourceAssembler extends ResourceSupport {
     }
 
 
-    public PersonResource toResource(Person entity, String userId) {
+    public PersonResource toResource(Person entity, String id) {
         PersonResource resource = instantiateResource(entity);
 
-        Link selfLink = ControllerLinkBuilder.linkTo(methodOn(PersonController.class).getperson(userId)).withRel("self");
+        Link selfLink = ControllerLinkBuilder.linkTo(methodOn(PersonController.class).getPerson(id)).withRel("self");
         resource.add(selfLink);
 
         return resource;
@@ -33,5 +33,10 @@ public class PersonResourceAssembler extends ResourceSupport {
     public PersonResource instantiateResource(Person entity) {
         PersonResource resource = dozerBeanMapper.map(entity, PersonResource.class);
         return resource;
+    }
+
+    public Person instantiateEntity(PersonResource resource) {
+        Person entity  = dozerBeanMapper.map(resource, Person.class);
+        return entity;
     }
 }
