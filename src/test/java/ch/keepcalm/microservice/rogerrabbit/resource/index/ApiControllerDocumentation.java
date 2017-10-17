@@ -19,10 +19,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ApiController.class)
-@AutoConfigureRestDocs(value = "target/generated-snippets",
-        uriScheme = "https",
-        uriHost = "keepcalm.ch",
-        uriPort = 443
+@AutoConfigureRestDocs(value = "target/generated-snippets"
+//        ,uriScheme = "https",
+//        uriHost = "keepcalm.ch",
+//        uriPort = 443
 )
 public class ApiControllerDocumentation {
 
