@@ -1,10 +1,12 @@
 package ch.keepcalm.microservice.rogerrabbit.resource.person;
 
 import ch.keepcalm.microservice.rogerrabbit.infrastructure.domain.Person;
+import ch.keepcalm.microservice.rogerrabbit.infrastructure.exception.PersonNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -23,6 +25,9 @@ public class PersonService {
 
     public Person getPerson(String id){
         Person person = personRepository.findById(id);
+        if (person == null ){
+            throw new PersonNotFoundException();
+        }
         return person;
     }
 
@@ -33,5 +38,13 @@ public class PersonService {
 
     public Person save(Person person) {
         return personRepository.save(person);
+    }
+
+    public void deletePerson(String id)  {
+        Person person = personRepository.findById(id);
+        if (person == null ){
+            throw new PersonNotFoundException();
+        }
+        Optional.ofNullable(person).ifPresent(x -> personRepository.delete(x));
     }
 }

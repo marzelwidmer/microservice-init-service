@@ -4,6 +4,7 @@ import ch.keepcalm.microservice.rogerrabbit.infrastructure.domain.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resources;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -61,7 +62,13 @@ public class PersonController {
     public ResponseEntity<Resources<PersonResource>> createPerson(@RequestBody PersonResource personResource) {
         Person person = personService.save(personResourceAssembler.instantiateEntity(personResource));
 
-        return new ResponseEntity(personResourceAssembler.toResource(person, person.getId()), HttpStatus.OK);
+        return new ResponseEntity(personResourceAssembler.toResource(person, person.getId()), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Resources<PersonResource>> deletePerson( @PathVariable String id)  {
+        personService.deletePerson(id);
+        return new ResponseEntity(HttpEntity.EMPTY.getBody(),HttpStatus.OK);
     }
 
 }

@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * Created by marcelwidmer
  */
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class BusinessException extends Exception {
+public class BusinessException extends RuntimeException {
 
-     public BusinessException(String message){
-         super(message);
-     }
+    public BusinessException(String message) {
+        super(message);
+    }
+
+    public BusinessException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
 }
