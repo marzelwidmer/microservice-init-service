@@ -25,7 +25,7 @@ public class PersonController {
         this.personResourceAssembler = personResourceAssembler;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping
     public ResponseEntity<Resources<PersonResource>> getPersons() {
         List<PersonResource> personResources = new ArrayList();
 
