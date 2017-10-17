@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/customers", produces = "application/hal+json")
+@RequestMapping(value = "/persons", produces = "application/hal+json")
 @Slf4j
 public class PersonController {
 
@@ -25,7 +25,7 @@ public class PersonController {
         this.personResourceAssembler = personResourceAssembler;
     }
 
-    @GetMapping(value = "persons")
+    @GetMapping(value = "/")
     public ResponseEntity<Resources<PersonResource>> getPersons() {
         List<PersonResource> personResources = new ArrayList();
 
@@ -39,7 +39,7 @@ public class PersonController {
     }
 
 
-    @GetMapping(value = "persons/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Resources<PersonResource>> getPerson(@PathVariable String id) {
         Person person = personService.getPerson(id);
         PersonResource productResource = personResourceAssembler.toResource(person, id);
@@ -47,7 +47,7 @@ public class PersonController {
     }
 
 
-    @PutMapping(value = "persons/{id}")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<Resources<PersonResource>> updatePerson(@RequestBody PersonResource personResource, @PathVariable String id) {
         Person person = personService.getPerson(id);
         person.setFirstName(personResource.getFirstName());
@@ -57,7 +57,7 @@ public class PersonController {
         return new ResponseEntity(personResourceAssembler.toResource(updatedPerson, person.getId()), HttpStatus.OK);
     }
 
-    @PostMapping(value = "persons")
+    @PostMapping(value = "/")
     public ResponseEntity<Resources<PersonResource>> createPerson(@RequestBody PersonResource personResource) {
         Person person = personService.save(personResourceAssembler.instantiateEntity(personResource));
 
