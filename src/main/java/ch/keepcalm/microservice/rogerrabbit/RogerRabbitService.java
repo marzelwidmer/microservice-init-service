@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class RogerRabbitService implements CommandLineRunner {
+public class RogerRabbitService  {
 
     PersonRepository personRepository;
 
@@ -38,8 +39,11 @@ public class RogerRabbitService implements CommandLineRunner {
         return persons;
     }
 
-    @Override
-    public void run(String... strings) throws Exception {
-        personRepository.save(mockPerson());
+    @Bean
+    CommandLineRunner init(PersonRepository personRepository) {
+        return (args) -> {
+            personRepository.save(mockPerson());
+        };
     }
+
 }
