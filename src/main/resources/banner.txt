@@ -1,19 +1,43 @@
 ${AnsiColor.BRIGHT_BLUE}
+${AnsiColor.BRIGHT_BLUE}       ${AnsiColor.BRIGHT_BLUE}Application ${spring.application.name} in version ${info.build.version}  ${AnsiStyle.NORMAL}
+${AnsiColor.BRIGHT_BLUE}       ${AnsiColor.BRIGHT_BLUE}Profile   : ${spring.profiles.active}
+${AnsiColor.BRIGHT_BLUE}       ${AnsiColor.BRIGHT_BLUE}Address   : ${server.address}
+${AnsiColor.BRIGHT_BLUE}       ${AnsiColor.BRIGHT_BLUE}Port      : ${server.port}
 ${AnsiColor.BRIGHT_BLUE}
 ${AnsiColor.BRIGHT_BLUE}
-${AnsiColor.BRIGHT_BLUE} _____                       _____       _     _     _ _
-${AnsiColor.BRIGHT_BLUE}|  __ \                     |  __ \     | |   | |   (_) |
-${AnsiColor.BRIGHT_BLUE}| |__) |___   __ _  ___ _ __| |__) |__ _| |__ | |__  _| |_
-${AnsiColor.BRIGHT_BLUE}|  _  // _ \ / _` |/ _ \ '__|  _  // _` | '_ \| '_ \| | __|
-${AnsiColor.BRIGHT_BLUE}| | \ \ (_) | (_| |  __/ |  | | \ \ (_| | |_) | |_) | | |_
-${AnsiColor.BRIGHT_BLUE}|_|  \_\___/ \__, |\___|_|  |_|  \_\__,_|_.__/|_.__/|_|\__|
-${AnsiColor.BRIGHT_BLUE}              __/ |
-${AnsiColor.BRIGHT_BLUE}             |___/
-${AnsiColor.BRIGHT_BLUE}  _____                 _
-${AnsiColor.BRIGHT_BLUE} / ____|               (_)                  ${spring.profiles.active}
-${AnsiColor.BRIGHT_BLUE}| (___   ___ _ ____   ___  ___ ___          ${spring.application.name}
-${AnsiColor.BRIGHT_BLUE} \___ \ / _ \ '__\ \ / / |/ __/ _ \         ${info.build.version}
-${AnsiColor.BRIGHT_BLUE} ____) |  __/ |   \ V /| | (_|  __/         address:${server.address}
-${AnsiColor.BRIGHT_BLUE}|_____/ \___|_|    \_/ |_|\___\___|         port:${server.port}
-${AnsiColor.BRIGHT_BLUE}
+${AnsiColor.BRIGHT_BLUE}                                                                  ..  .,.
+${AnsiColor.BRIGHT_BLUE}                                                              .ed$$$$???$$e
+${AnsiColor.BRIGHT_BLUE}                                                           .e$$$P",zebbc`9$
+${AnsiColor.BRIGHT_BLUE}                                                         z$$$P"ud$$$$$$P.dF
+${AnsiColor.BRIGHT_BLUE}                                                       e$$$" z$$$$$$$P"d$
+${AnsiColor.BRIGHT_BLUE}                                                    .e$$P".d$$$$$$$P"z$"
+${AnsiColor.BRIGHT_BLUE}                                      zdd$$bbe=-  zd$P"ud$$$$$$$$P"z$"
+${AnsiColor.BRIGHT_BLUE}                  .,uuu,.           z$$$$$$$$$$$bc:"4d$$$$$$$P",zdP"
+${AnsiColor.BRIGHT_BLUE}            ,=.c$$$$$$$$$$bc.      J$$$$$$$$$$$$$P"  3$$$P"".eP""
+${AnsiColor.BRIGHT_BLUE}        .zd$,d$$$$$$$$$$$$$$$c.    "$$$$$PPFF"":.zd$$b"".+=""
+${AnsiColor.BRIGHT_BLUE}      .d$$$$$$$$$$$$$$$$$$?$$$$c    $$$Fu rx$"d$PF"  ``
+${AnsiColor.BRIGHT_BLUE}     d$$$$$$$$$$$$$$$""   =q,`"?$.  $$$$F9 $"/"
+${AnsiColor.BRIGHT_BLUE}   .$$$$$$$$$$$$$$P"        "?$c`?c `$$$ EJE.
+${AnsiColor.BRIGHT_BLUE}  u$$$$$$$$$$$$$"             `"$c`?e`$$' ??"
+${AnsiColor.BRIGHT_BLUE} d$$$$$$$$$$$$$"                  "%`"zed$E9"`\.
+${AnsiColor.BRIGHT_BLUE}d$$$$$$$$$$$$P"                       $ ud$$d"?c
+${AnsiColor.BRIGHT_BLUE}$$$$$$$$$$$F                         `$J$',,`?$b`.
+${AnsiColor.BRIGHT_BLUE}4$$$$?$$P"                           `$$'<$$$e"$$b.
+${AnsiColor.BRIGHT_BLUE} `"          Mbc                      "$.<$$$$$`$$$c      ,zc,.
+${AnsiColor.BRIGHT_BLUE}             `?MMc                     ?$ $$???$`"`"..,cd$$$$$$C  _.- ~
+${AnsiColor.BRIGHT_BLUE}        ec,    "MMb.         .eWe       $b`    `i   ,$$$$$$9$$$"~   _ .
+${AnsiColor.BRIGHT_BLUE}        "MMMb.  `?MM.       dMMP"zbc,,..9$$. .,db  ,$$$$$L"d$$F- ~
+${AnsiColor.BRIGHT_BLUE}          "?MMbu  "MMc     9MMP d$$$$$$$$$$6kuLdbP""``"$$F<$$" = -- -
+${AnsiColor.BRIGHT_BLUE}             "?MMe.P5Mbu.  9MM 9$$$$$$C"",$$$$$E:dx(xd`J$>)"'
+${AnsiColor.BRIGHT_BLUE}               `?M"zMMMMMMMMMM $$$$$$$$$$bc"??$$ecu,,ud$$'
+${AnsiColor.BRIGHT_BLUE}       ,,umu,,.  "dMMMMMMMMMMML`"??$$$$$$$$$bc"????????"
+${AnsiColor.BRIGHT_BLUE}      ?MMMMMMMMMMkMMMMMMMMMMMME -~  / `"""""""`  bc-=
+${AnsiColor.BRIGHT_BLUE}             ``''"?MMMMMMMMMcMF    '             "$$L   z;Cr
+${AnsiColor.BRIGHT_BLUE}                   `?MMMMMMM",u   '       :(C;u   $$F ,??;CF
+${AnsiColor.BRIGHT_BLUE}                       """",mP"           `;?;CC= `r +;?;e;"
+${AnsiColor.BRIGHT_BLUE}                          "",u             "CCC:C><;?;/'CcJb
+${AnsiColor.BRIGHT_BLUE}                            "$k            .c'C>";C'J?.'%<cC> c
+${AnsiColor.BRIGHT_BLUE}                             $$u         .d$E ><L>" dddk u,",d$$c,
+${AnsiColor.BRIGHT_BLUE}                             '$$c      .d$$$F Ci:`.F?$$$ $$k `?$$$$c
+${AnsiColor.BRIGHT_BLUE}                              $$$k    d$$$"      d$$'$$$>?)'    "?$$$b.
 ${AnsiColor.BRIGHT_BLUE}
